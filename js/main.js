@@ -1,19 +1,19 @@
-/* ========== 1. MENÚ HAMBURGUESA ========== */
+
 const btnMenu = document.getElementById("btn-menu");
 const menu = document.getElementById("menu");
 
 btnMenu.addEventListener("click", function () {
   menu.classList.toggle("abierto");
 });
-// Al hacer clic en un enlace, se cierra el menú
+
 menu.querySelectorAll("a").forEach(function (enlace) {
   enlace.addEventListener("click", function () {
     menu.classList.remove("abierto");
   });
 });
 
-/* ========== 2. VERSÍCULO DEL DÍA ========== */
-// Usamos el número de días desde 1970 para que cambie cada día
+
+
 function mostrarVersiculoDelDia() {
   const dias = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
   const v = versiculos[dias % versiculos.length];
@@ -22,8 +22,8 @@ function mostrarVersiculoDelDia() {
 }
 mostrarVersiculoDelDia();
 
-/* ========== 3. BARRAS DE HABILIDADES ========== */
-// Se llenan cuando la sección aparece en pantalla
+
+
 const rellenos = document.querySelectorAll(".relleno");
 const observador = new IntersectionObserver(function (entradas) {
   entradas.forEach(function (entrada) {
@@ -34,7 +34,7 @@ const observador = new IntersectionObserver(function (entradas) {
 });
 rellenos.forEach(function (r) { observador.observe(r); });
 
-/* ========== 4. CARTAS (guardadas en localStorage) ========== */
+
 const formCarta = document.getElementById("form-carta");
 const listaCartas = document.getElementById("lista-cartas");
 let categoriaActual = "Todas";
@@ -68,15 +68,15 @@ function mostrarCartas() {
       '<p class="fecha">' + c.fecha + "</p>" +
       '<p class="contenido"></p>' +
       '<button class="borrar">Borrar</button>';
-    // textContent evita que se cuele código raro en el texto
+
     card.querySelector("h3").textContent = c.titulo;
     card.querySelector(".contenido").textContent = c.texto;
 
-    // Clic en la card: se abre o se cierra
+
     card.addEventListener("click", function () {
       card.classList.toggle("abierta");
     });
-    // Botón borrar
+
     card.querySelector(".borrar").addEventListener("click", function (e) {
       e.stopPropagation();
       guardarCartas(leerCartas().filter(function (x) { return x.id !== c.id; }));
@@ -112,7 +112,7 @@ formCarta.addEventListener("submit", function (e) {
   mostrarCartas();
 });
 
-// Filtros por categoría
+
 document.querySelectorAll(".filtro").forEach(function (btn) {
   btn.addEventListener("click", function () {
     document.querySelectorAll(".filtro").forEach(function (b) { b.classList.remove("activo"); });
@@ -123,13 +123,13 @@ document.querySelectorAll(".filtro").forEach(function (btn) {
 });
 mostrarCartas();
 
-/* ========== 5. IA APLICADA: recomendador por ánimo ========== */
+
 document.getElementById("animo-select").addEventListener("change", function (e) {
   const animo = e.target.value;
   const caja = document.getElementById("resultado-animo");
   if (animo === "") { caja.classList.remove("visible"); return; }
 
-  // Busca los versículos que sirven para ese ánimo y elige uno al azar
+
   const opciones = versiculos.filter(function (v) { return v.animos.includes(animo); });
   const v = opciones[Math.floor(Math.random() * opciones.length)];
 
@@ -138,7 +138,7 @@ document.getElementById("animo-select").addEventListener("change", function (e) 
   caja.classList.add("visible");
 });
 
-/* ========== 6. VALIDACIÓN DEL FORMULARIO DE CONTACTO ========== */
+
 const campos = {
   nombre: { el: document.getElementById("nombre"), min: 3, msg: "El nombre debe tener al menos 3 letras." },
   correo: { el: document.getElementById("correo"), msg: "Escribe un correo válido." },
@@ -160,7 +160,7 @@ function revisar(clave) {
   return ok;
 }
 
-// Validación en tiempo real: mientras escribe
+
 Object.keys(campos).forEach(function (clave) {
   campos[clave].el.addEventListener("input", function () { revisar(clave); });
 });
@@ -173,7 +173,7 @@ document.getElementById("form-contacto").addEventListener("submit", function (e)
   });
   if (!todoBien) return;
 
-  // Envía los datos a Formspree sin recargar la página
+
   const form = e.target;
   fetch(form.action, {
     method: "POST",

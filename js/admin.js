@@ -1,5 +1,4 @@
-// Login SIMULADO (prototipo): usuario y clave están en el código.
-// En una versión real esto se haría con un backend.
+
 const USUARIO = "admin";
 const CLAVE = "esther2026";
 
@@ -41,5 +40,5 @@ document.getElementById("btn-salir").addEventListener("click", function () {
   location.reload();
 });
 
-// Si ya inició sesión, entra directo
+
 if (sessionStorage.getItem("admin") === "si") mostrarPanel();

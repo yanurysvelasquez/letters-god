@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Letters God</title>
- <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Dancing+Script:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  
+  <div class="decor decor-envelope" aria-hidden="true">✉</div>
+  <div class="decor decor-leaf" aria-hidden="true">❦</div>
+  <div class="decor decor-star" aria-hidden="true">✧</div>
+  <div class="decor decor-sparkle" aria-hidden="true">✦</div>
+
+  
   <header class="header">
-    <a href="#inicio" class="logo">✉ Letters God</a>
+    <a href="#inicio" class="logo">Cartas a Dios</a>
     <button id="btn-menu" class="btn-menu" aria-label="Abrir menú">☰</button>
     <nav id="menu" class="menu">
       <a href="#inicio">Inicio</a>
@@ -20,60 +30,84 @@
   </header>
 
   <main>
-    <section id="inicio" class="hero">
-      <h1>Letters God</h1>
-      <p>No tienes que encontrar las palabras perfectas para acercarte a Dios. Él conoce tu corazón, escucha incluso aquello que no sabes cómo expresar y permanece cerca de quienes tienen el corazón quebrantado.
 
-La oración no tiene que ser perfecta. Solo tiene que ser sincera.</p>
-      <div class="versiculo-dia">
-        <h2>Versículo del día</h2>
-        <blockquote id="versiculo-texto">Cargando...</blockquote>
-        <cite id="versiculo-ref"></cite>
+    
+    <section id="inicio" class="hero">
+      <span class="eyebrow">UN ESPACIO PARA TU CORAZÓN</span>
+      <h1>Querido Dios...</h1>
+      <p class="hero-text">
+        No necesitas encontrar las palabras perfectas.
+        Solo abre tu corazón y comienza a hablar con Él.
+      </p>
+      <a href="#cartas" class="btn-carta">
+        <span>Escribir una carta</span>
+        <span>↗</span>
+      </a>
+      <div class="hero-divider">
+        <span>✧</span>
+        <span>Un momento a solas con Dios</span>
+        <span>✧</span>
       </div>
-      <a href="#cartas" class="boton">Escribir mi carta</a>
     </section>
 
+    
+    <section class="verse">
+      <span class="verse-label">VERSÍCULO DEL DÍA</span>
+      <span class="verse-icon">❝</span>
+      <p id="versiculo-texto">Cargando...</p>
+      <span class="verse-reference" id="versiculo-ref"></span>
+    </section>
 
   
-    <section id="cartas" class="seccion">
-      <h2>Mis cartas</h2>
+    
+    <section id="cartas" class="letter-section">
+      <div class="letter-decoration">✉</div>
+      <h2>Unas palabras para Él</h2>
+      <p class="letter-intro">
+        Cuéntale lo que llevas dentro.
+        Aquí siempre tienes un espacio para hablar con Dios.
+      </p>
 
       <form id="form-carta" class="form" novalidate>
-        <label for="titulo">Título</label>
+        <label for="titulo">Título de tu carta</label>
         <input type="text" id="titulo" placeholder="Ej: Gracias por este día">
 
-    
+      
 
         <label for="texto">Querido Dios...</label>
-        <textarea id="texto" rows="5" placeholder="Escribe aquí tu oración"></textarea>
+        <textarea id="texto" rows="6" class="papel" placeholder="Escribe aquí tu oración"></textarea>
 
         <p id="error-carta" class="error"></p>
-        <button type="submit" class="boton">Guardar carta</button>
+        <button type="submit" class="btn-carta"><span>Guardar carta</span><span>↗</span></button>
       </form>
 
-    
+      <h3 class="subtitulo">Tus cartas guardadas</h3>
       <div id="lista-cartas" class="cards"></div>
     </section>
 
-  
-    <section id="animo" class="seccion alterna">
-      <h2>¿Cómo te sientes hoy?</h2>
-      <p>Elige tu estado de ánimo y te recomiendo un versículo y una oración corta.</p>
-      <select id="animo-select">
-        <option value="">Selecciona...</option>
-        <option value="triste">Triste</option>
-        <option value="ansiosa">Ansiosa</option>
-        <option value="agradecida">Agradecida</option>
-        <option value="cansada">Cansada</option>
-        <option value="con miedo">Con miedo</option>
-      </select>
-      <div id="resultado-animo" class="resultado"></div>
+    
+    <section id="animo" class="seccion franja">
+      <div class="franja-interior">
+        <span class="eyebrow">UNA PALABRA PARA HOY</span>
+        <h2>¿Cómo te sientes hoy?</h2>
+        <p>Elige tu estado de ánimo y te recomiendo un versículo y una oración corta.</p>
+        <select id="animo-select">
+          <option value="">Selecciona...</option>
+          <option value="triste">Triste</option>
+          <option value="ansiosa">Ansioso</option>
+          <option value="agradecida">Agradecido</option>
+          <option value="cansada">Cansado</option>
+          <option value="con miedo">Con miedo</option>
+        </select>
+        <div id="resultado-animo" class="resultado"></div>
+      </div>
     </section>
 
-   
+    
     <section id="contacto" class="seccion">
+      <span class="eyebrow">ESCRÍBEME</span>
       <h2>Contacto</h2>
-      <!-- Cambia TU_CODIGO por el de Formspree -->
+      
       <form id="form-contacto" class="form" action="https://formspree.io/f/TU_CODIGO" method="POST" novalidate>
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre">
@@ -87,7 +121,7 @@ La oración no tiene que ser perfecta. Solo tiene que ser sincera.</p>
         <textarea id="mensaje" name="mensaje" rows="4"></textarea>
         <small class="error" id="error-mensaje"></small>
 
-        <button type="submit" class="boton">Enviar</button>
+        <button type="submit" class="btn-carta"><span>Enviar</span><span>↗</span></button>
         <p id="ok-contacto" class="ok"></p>
       </form>
     </section>
@@ -95,9 +129,10 @@ La oración no tiene que ser perfecta. Solo tiene que ser sincera.</p>
   </main>
 
   <footer class="footer">
-    <p>© 2026 Letters God · Hecho con fe por Esther</p>
+    <p class="footer-titulo">Cartas a Dios</p>
+    <p class="footer-texto">esthervelasquezblanco@gmail.com</p>
+    <p>© 2026 · Hecho con fe por Esther</p>
     <a href="admin.html">Zona admin</a>
-    <p>esthervelasquezblanco@gmail.com</p>
   </footer>
 
   <script src="js/versiculos.js"></script>

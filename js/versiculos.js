@@ -1,4 +1,4 @@
-// Lista de versículos. Puedes agregar más con el mismo formato.
+
 const versiculos = [
   { texto: "Echad sobre él toda vuestra ansiedad, porque él tiene cuidado de vosotros.", ref: "1 Pedro 5:7", animos: ["ansiosa", "con miedo"] },
   { texto: "Jehová es mi pastor; nada me faltará.", ref: "Salmo 23:1", animos: ["con miedo", "cansada"] },
@@ -17,7 +17,7 @@ const versiculos = [
   { texto: "Sean vuestras peticiones conocidas delante de Dios en toda oración.", ref: "Filipenses 4:6", animos: ["ansiosa"] }
 ];
 
-// Oraciones cortas para el recomendador
+
 const oraciones = {
   "triste": "Señor, hoy mi corazón está pesado. Abrázame y recuérdame que no estoy sola.",
   "ansiosa": "Dios, te entrego lo que no puedo controlar. Dame calma y confianza en ti.",

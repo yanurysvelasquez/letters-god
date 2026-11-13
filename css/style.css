@@ -1,4 +1,4 @@
-/* VARIABLES: cambia aquí los colores de toda la página */
+ 
 :root {
   --azul: #5798d7;
   --negro: #0f0909;
@@ -24,7 +24,6 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
@@ -61,7 +60,6 @@ body {
   cursor: pointer;
 }
 
-/* HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -101,7 +99,7 @@ body {
   }
 }
 
-/* SECCIONES */
+
 .seccion {
   padding: 60px 20px;
   max-width: 900px;
@@ -138,7 +136,7 @@ body {
   margin: 10px 0 0 20px;
 }
 
-/* BOTONES */
+
 .boton,
 .boton-chico {
   display: inline-block;
@@ -164,7 +162,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* HABILIDADES: barras animadas */
 .habilidad {
   margin-bottom: 16px;
 }
@@ -183,7 +180,7 @@ body {
   transition: width 1.5s ease;
 }
 
-/* FORMULARIOS */
+
 .form {
   display: flex;
   flex-direction: column;
@@ -280,7 +277,6 @@ body {
   animation: aparecer 0.8s ease;
 }
 
-/* FOOTER */
 .footer {
   background: var(--azul);
   color: var(--blanco);
@@ -292,7 +288,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* RESPONSIVE: celular */
+
 @media (max-width: 700px) {
   .btn-menu {
     display: block;

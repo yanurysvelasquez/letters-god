@@ -37,7 +37,6 @@ rellenos.forEach(function (r) { observador.observe(r); });
 
 const formCarta = document.getElementById("form-carta");
 const listaCartas = document.getElementById("lista-cartas");
-let categoriaActual = "Todas";
 
 function leerCartas() {
   return JSON.parse(localStorage.getItem("cartas")) || [];
@@ -50,20 +49,10 @@ function mostrarCartas() {
   const cartas = leerCartas();
   listaCartas.innerHTML = "";
 
-  const filtradas = cartas.filter(function (c) {
-    return categoriaActual === "Todas" || c.categoria === categoriaActual;
-  });
-
-  if (filtradas.length === 0) {
-    listaCartas.innerHTML = "<p>Aún no hay cartas aquí. ¡Escribe la primera!</p>";
-    return;
-  }
-
-  filtradas.forEach(function (c) {
+   cartas.forEach(function (c) {
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML =
-      '<span class="etiqueta">' + c.categoria + "</span>" +
       "<h3></h3>" +
       '<p class="fecha">' + c.fecha + "</p>" +
       '<p class="contenido"></p>' +
@@ -88,9 +77,8 @@ function mostrarCartas() {
 
 formCarta.addEventListener("submit", function (e) {
   e.preventDefault();
-  const titulo = document.getElementById("titulo").value.trim();
+  const titulo = document.getElementById("titulo").value.trim(); // ew
   const texto = document.getElementById("texto").value.trim();
-  const categoria = document.getElementById("categoria").value;
   const error = document.getElementById("error-carta");
 
   if (titulo.length < 3 || texto.length < 10) {
@@ -104,7 +92,6 @@ formCarta.addEventListener("submit", function (e) {
     id: Date.now(),
     titulo: titulo,
     texto: texto,
-    categoria: categoria,
     fecha: new Date().toLocaleDateString("es-CO")
   });
   guardarCartas(cartas);
@@ -117,7 +104,6 @@ document.querySelectorAll(".filtro").forEach(function (btn) {
   btn.addEventListener("click", function () {
     document.querySelectorAll(".filtro").forEach(function (b) { b.classList.remove("activo"); });
     btn.classList.add("activo");
-    categoriaActual = btn.dataset.cat;
     mostrarCartas();
   });
 });

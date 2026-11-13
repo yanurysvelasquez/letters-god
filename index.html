@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartas a Dios</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Letters God</title>
+ <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ENCABEZADO Y MENÚ -->
   <header class="header">
-    <a href="#inicio" class="logo">✉ Cartas a Dios</a>
+    <a href="#inicio" class="logo">✉ Letters God</a>
     <button id="btn-menu" class="btn-menu" aria-label="Abrir menú">☰</button>
     <nav id="menu" class="menu">
       <a href="#inicio">Inicio</a>
@@ -21,11 +20,11 @@
   </header>
 
   <main>
-
-    <!-- INICIO: versículo del día -->
     <section id="inicio" class="hero">
-      <h1>Cartas a Dios</h1>
-      <p>Un espacio para escribirle a Dios, orar y descansar.</p>
+      <h1>Letters God</h1>
+      <p>No tienes que encontrar las palabras perfectas para acercarte a Dios. Él conoce tu corazón, escucha incluso aquello que no sabes cómo expresar y permanece cerca de quienes tienen el corazón quebrantado.
+
+La oración no tiene que ser perfecta. Solo tiene que ser sincera.</p>
       <div class="versiculo-dia">
         <h2>Versículo del día</h2>
         <blockquote id="versiculo-texto">Cargando...</blockquote>
@@ -35,21 +34,15 @@
     </section>
 
 
-    <!-- MIS CARTAS (catálogo + proyectos) -->
+  
     <section id="cartas" class="seccion">
       <h2>Mis cartas</h2>
 
       <form id="form-carta" class="form" novalidate>
-        <label for="titulo">Título de tu carta</label>
+        <label for="titulo">Título</label>
         <input type="text" id="titulo" placeholder="Ej: Gracias por este día">
 
-        <label for="categoria">Categoría</label>
-        <select id="categoria">
-          <option value="Gratitud">Gratitud</option>
-          <option value="Paz">Paz</option>
-          <option value="Fortaleza">Fortaleza</option>
-          <option value="Perdón">Perdón</option>
-        </select>
+    
 
         <label for="texto">Querido Dios...</label>
         <textarea id="texto" rows="5" placeholder="Escribe aquí tu oración"></textarea>
@@ -58,18 +51,11 @@
         <button type="submit" class="boton">Guardar carta</button>
       </form>
 
-      <div class="filtros" id="filtros">
-        <button class="filtro activo" data-cat="Todas">Todas</button>
-        <button class="filtro" data-cat="Gratitud">Gratitud</button>
-        <button class="filtro" data-cat="Paz">Paz</button>
-        <button class="filtro" data-cat="Fortaleza">Fortaleza</button>
-        <button class="filtro" data-cat="Perdón">Perdón</button>
-      </div>
-
+    
       <div id="lista-cartas" class="cards"></div>
     </section>
 
-    <!-- IA APLICADA: recomendador -->
+  
     <section id="animo" class="seccion alterna">
       <h2>¿Cómo te sientes hoy?</h2>
       <p>Elige tu estado de ánimo y te recomiendo un versículo y una oración corta.</p>
@@ -84,7 +70,7 @@
       <div id="resultado-animo" class="resultado"></div>
     </section>
 
-    <!-- CONTACTO -->
+   
     <section id="contacto" class="seccion">
       <h2>Contacto</h2>
       <!-- Cambia TU_CODIGO por el de Formspree -->
@@ -109,8 +95,9 @@
   </main>
 
   <footer class="footer">
-    <p>© 2026 Cartas a Dios · Hecho con fe por Esther</p>
+    <p>© 2026 Letters God · Hecho con fe por Esther</p>
     <a href="admin.html">Zona admin</a>
+    <p>esthervelasquezblanco</p>
   </footer>
 
   <script src="js/versiculos.js"></script>

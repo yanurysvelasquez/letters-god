@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin · Cartas a Dios</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">✉ Cartas a Dios</a>
+    <a href="index.html" class="boton-chico">Volver al inicio</a>
+  </header>
+
+  <main class="seccion">
+    <h1>Panel de administración</h1>
+
+    <!-- LOGIN -->
+    <form id="form-login" class="form" novalidate>
+      <label for="usuario">Usuario</label>
+      <input type="text" id="usuario">
+      <label for="clave">Contraseña</label>
+      <input type="password" id="clave">
+      <p id="error-login" class="error"></p>
+      <button type="submit" class="boton">Entrar</button>
+    </form>
+
+    <!-- ZONA PRIVADA -->
+    <div id="zona-admin" style="display:none">
+      <p>Total de cartas guardadas: <strong id="total"></strong></p>
+      <button id="btn-salir" class="boton-chico">Cerrar sesión</button>
+      <div id="admin-lista" class="cards"></div>
+    </div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

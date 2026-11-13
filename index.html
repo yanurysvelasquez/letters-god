@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartas a Dios</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO Y MENÚ -->
+  <header class="header">
+    <a href="#inicio" class="logo">✉ Cartas a Dios</a>
+    <button id="btn-menu" class="btn-menu" aria-label="Abrir menú">☰</button>
+    <nav id="menu" class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#cartas">Mis cartas</a>
+      <a href="#animo">¿Cómo estás?</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- INICIO: versículo del día -->
+    <section id="inicio" class="hero">
+      <h1>Cartas a Dios</h1>
+      <p>Un espacio para escribirle a Dios, orar y descansar.</p>
+      <div class="versiculo-dia">
+        <h2>Versículo del día</h2>
+        <blockquote id="versiculo-texto">Cargando...</blockquote>
+        <cite id="versiculo-ref"></cite>
+      </div>
+      <a href="#cartas" class="boton">Escribir mi carta</a>
+    </section>
+
+
+    <!-- MIS CARTAS (catálogo + proyectos) -->
+    <section id="cartas" class="seccion">
+      <h2>Mis cartas</h2>
+
+      <form id="form-carta" class="form" novalidate>
+        <label for="titulo">Título de tu carta</label>
+        <input type="text" id="titulo" placeholder="Ej: Gracias por este día">
+
+        <label for="categoria">Categoría</label>
+        <select id="categoria">
+          <option value="Gratitud">Gratitud</option>
+          <option value="Paz">Paz</option>
+          <option value="Fortaleza">Fortaleza</option>
+          <option value="Perdón">Perdón</option>
+        </select>
+
+        <label for="texto">Querido Dios...</label>
+        <textarea id="texto" rows="5" placeholder="Escribe aquí tu oración"></textarea>
+
+        <p id="error-carta" class="error"></p>
+        <button type="submit" class="boton">Guardar carta</button>
+      </form>
+
+      <div class="filtros" id="filtros">
+        <button class="filtro activo" data-cat="Todas">Todas</button>
+        <button class="filtro" data-cat="Gratitud">Gratitud</button>
+        <button class="filtro" data-cat="Paz">Paz</button>
+        <button class="filtro" data-cat="Fortaleza">Fortaleza</button>
+        <button class="filtro" data-cat="Perdón">Perdón</button>
+      </div>
+
+      <div id="lista-cartas" class="cards"></div>
+    </section>
+
+    <!-- IA APLICADA: recomendador -->
+    <section id="animo" class="seccion alterna">
+      <h2>¿Cómo te sientes hoy?</h2>
+      <p>Elige tu estado de ánimo y te recomiendo un versículo y una oración corta.</p>
+      <select id="animo-select">
+        <option value="">Selecciona...</option>
+        <option value="triste">Triste</option>
+        <option value="ansiosa">Ansiosa</option>
+        <option value="agradecida">Agradecida</option>
+        <option value="cansada">Cansada</option>
+        <option value="con miedo">Con miedo</option>
+      </select>
+      <div id="resultado-animo" class="resultado"></div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion">
+      <h2>Contacto</h2>
+      <!-- Cambia TU_CODIGO por el de Formspree -->
+      <form id="form-contacto" class="form" action="https://formspree.io/f/TU_CODIGO" method="POST" novalidate>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <small class="error" id="error-nombre"></small>
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo">
+        <small class="error" id="error-correo"></small>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+        <small class="error" id="error-mensaje"></small>
+
+        <button type="submit" class="boton">Enviar</button>
+        <p id="ok-contacto" class="ok"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Cartas a Dios · Hecho con fe por Esther</p>
+    <a href="admin.html">Zona admin</a>
+  </footer>
+
+  <script src="js/versiculos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
